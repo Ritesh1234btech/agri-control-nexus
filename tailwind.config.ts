@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -12,7 +13,7 @@ export default {
 	theme: {
 		container: {
 			center: true,
-			padding: '2rem',
+			padding: '1rem',
 			screens: {
 				'2xl': '1400px'
 			}
@@ -61,7 +62,17 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+                agribot: {
+                    green: '#3a7d44',
+                    lightGreen: '#4caf50',
+                    blue: '#2196f3',
+                    teal: '#009688',
+                    red: '#f44336',
+                    background: '#f2fce2',
+                    darkText: '#1e3d22',
+                    lightText: '#f2fce2',
+                }
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -84,12 +95,20 @@ export default {
 					to: {
 						height: '0'
 					}
-				}
+				},
+                'pulse-slow': {
+                    '0%, 100%': { opacity: '1' },
+                    '50%': { opacity: '0.5' }
+                }
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
-			}
+				'accordion-up': 'accordion-up 0.2s ease-out',
+                'pulse-slow': 'pulse-slow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite'
+			},
+            fontFamily: {
+                'ubuntu': ['Ubuntu', 'sans-serif']
+            }
 		}
 	},
 	plugins: [require("tailwindcss-animate")],
