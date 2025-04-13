@@ -139,7 +139,7 @@ const BluetoothDeviceList: React.FC<BluetoothDeviceListProps> = ({ onConnect }) 
                 <p className="text-xs text-muted-foreground">{device.id}</p>
               </div>
               {!device.isTrusted && (
-                <AlertTriangle size={16} className="text-amber-500" title="Untrusted Device" />
+                <AlertTriangle size={16} className="text-amber-500" aria-label="Untrusted Device" />
               )}
             </div>
             

@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Shovel, Seedling, Droplets, XCircle } from 'lucide-react';
+import { Shovel, Leaf, Droplets, XCircle } from 'lucide-react';
 import { bluetoothService } from '@/services/BluetoothService';
 import { dataService } from '@/services/DataService';
 import { toast } from '@/components/ui/use-toast';
@@ -78,7 +78,7 @@ const ControlPanel: React.FC = () => {
         onClick={() => handleCommand('S')}
         disabled={!isConnected}
       >
-        <Seedling size={28} />
+        <Leaf size={28} />
         <span>Seed</span>
       </button>
       

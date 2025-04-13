@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Droplets, Battery, AlertTriangle } from 'lucide-react';
 import { bluetoothService, SensorData } from '@/services/BluetoothService';
 import { Progress } from '@/components/ui/progress';
+import { cn } from '@/lib/utils';
 
 const SensorDisplay: React.FC = () => {
   const [sensorData, setSensorData] = useState<SensorData>({
@@ -64,8 +65,7 @@ const SensorDisplay: React.FC = () => {
         </div>
         <Progress 
           value={sensorData.soilMoisture} 
-          className="h-2"
-          indicatorClassName={getMoistureColor(sensorData.soilMoisture)}
+          className={cn("h-2", getMoistureColor(sensorData.soilMoisture))}
         />
         <p className="text-xs text-muted-foreground mt-2">
           Last updated: {sensorData.timestamp.toLocaleTimeString()}
@@ -82,8 +82,7 @@ const SensorDisplay: React.FC = () => {
         </div>
         <Progress 
           value={sensorData.batteryLevel} 
-          className="h-2"
-          indicatorClassName={getBatteryColor(sensorData.batteryLevel)}
+          className={cn("h-2", getBatteryColor(sensorData.batteryLevel))}
         />
         <p className="text-xs text-muted-foreground mt-2">
           Last updated: {sensorData.timestamp.toLocaleTimeString()}
